@@ -1,0 +1,10 @@
+# ~/dotfiles/.gitignore
+*.swp
+*.bak
+*~
+*.o
+.DS_Store
+/cache/
+/plugin/
+/lazy-lock.json
+/site/
