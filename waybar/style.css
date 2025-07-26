@@ -1,0 +1,133 @@
+@import "/home/nephesora/.cache/wal/colors-waybar.css";
+
+/* ~/.config/waybar/style.css */
+* {
+    font-family: "Symbols Nerd Font Mono", monospace;
+    font-size: 16px;
+    min-height: 0;
+    transition: all 0.5s ease;
+}
+
+window#waybar{
+    all: unset;
+}
+.modules-left, .modules-center, .modules-right {
+    padding: 0px 10px;
+    color: @foreground;
+}
+
+#waybar {
+    background-color: @background;
+    color: @foreground;
+    border-bottom: 1px solid @color1;
+    padding: 0px 12px;
+}
+
+/* Module containers */
+#workspaces,
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#idle_inhibitor,
+#power-profiles-daemon {
+    padding: 5px 15px;
+    margin: 0px 2px;
+    border-radius: 10px;
+    background: alpha(@background, .8);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .85);
+    border: solid 1px alpha(@foreground, 0.3);
+}
+
+#battery {
+    margin-right: 0px;
+}
+
+/* Workspaces */
+#workspaces {
+    margin-left: 0px;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 0 10px;
+}
+
+#workspaces button label {
+    color: alpha(@foreground, 0.5);
+    font-weight: 600;
+}
+
+#workspaces button:hover label {
+    color: alpha(@foreground, 0.85);
+}
+
+#workspaces button.active label {
+    color: alpha(@foreground, 1.0);
+    font-weight: 900;
+}
+
+/* Icons */
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#idle_inhibitor,
+#power-profiles-daemon {
+    color: alpha(@foreground, 0.8);
+    font-weight: 600;
+}
+
+#clock:hover, 
+#network:hover, 
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#battery:hover,
+#backlight:hover {
+    color: alpha(@foreground, 1.0);
+    transition: all 0.5s ease;
+    font-weight: 900;
+}
+
+/* Status indicators */
+#battery.warning {
+    color: @color3;
+}
+
+#battery.critical {
+    color: @color1;
+}
+
+#battery.charging {
+    color: @color4;
+}
+
+#network.disconnected {
+    color: @color1;
+}
+
+#pulseaudio.muted {
+    color: @color1;
+}
+
+#idle_inhibitor.activated {
+    color: @color4;
+}
+
+#pulseaudio button.active {
+    color: @color4;
+    background: @background;
+}
+
+/* Tooltips */
+tooltip {
+    background: alpha(@background, 0.8);
+    color: @foreground;
+}
+
+tooltip label {
+    color: alpha(@foreground, 0.9);
+    font-weight: 800;
+}

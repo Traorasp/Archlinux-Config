@@ -1,0 +1,14 @@
+* {
+  font-family: "Fira Code";
+  font-size: 14px;
+}
+
+window {
+  background-color: rgba(46, 52, 64, 0.9); /* Match terminal bg */
+  border: 2px solid #81A1C1; /* Accent color */
+}
+
+#input {
+  background-color: #3B4252;
+  color: #ECEFF4;
+}
