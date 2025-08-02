@@ -1,0 +1,110 @@
+@define-color bg @background;
+@define-color fg @foreground;
+@define-color accent @color1;
+@define-color secondary @color3;
+@define-color highlight alpha(@color5, 0.4);
+
+/* Main Window - Frosted Glass Effect */
+window {
+    background-color: alpha(@bg, 0.88);
+    border-radius: 16px;
+    border: 1px solid alpha(@accent, 0.15);
+    box-shadow: 
+        0 0 0 1px alpha(@bg, 0.3),
+        0 10px 30px alpha(#000000, 0.2);
+    margin: 10px;
+}
+
+/* Header Bar - Subtle Gradient */
+headerbar {
+    background: linear-gradient(
+        to bottom,
+        alpha(@bg, 0.95),
+        alpha(@bg, 0.85)
+    );
+    border-bottom: 1px solid alpha(@accent, 0.1);
+    box-shadow: none;
+    border-radius: 16px 16px 0 0;
+    padding: 6px;
+}
+
+/* Tabs - Sleek Modern Style */
+notebook tab {
+    background: alpha(@bg, 0.7);
+    border: none;
+    padding: 8px 16px;
+    margin: 0 2px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: inset 0 -2px 0 alpha(@accent, 0);
+    transition: all 0.2s ease;
+}
+
+notebook tab:checked {
+    background: alpha(@bg, 0.9);
+    box-shadow: inset 0 -2px 0 @accent;
+    color: @accent;
+}
+
+/* Volume Sliders - Glowing Effect */
+scale trough {
+    background: alpha(@bg, 0.4);
+    border-radius: 6px;
+    min-height: 12px;
+    box-shadow: inset 0 0 0 1px alpha(@fg, 0.05);
+}
+
+scale highlight {
+    background: linear-gradient(
+        to right, 
+        alpha(@accent, 0.8), 
+        alpha(@secondary, 0.8)
+    );
+    border-radius: 6px;
+    box-shadow: 
+        0 0 2px alpha(@accent, 0.3),
+        0 0 8px alpha(@accent, 0.2);
+}
+
+/* Buttons - Floating Design */
+button {
+    background: alpha(@bg, 0.6);
+    border: 1px solid alpha(@accent, 0.1);
+    border-radius: 8px;
+    padding: 6px 12px;
+    box-shadow: 0 1px 3px alpha(#000000, 0.1);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: alpha(@accent, 0.15);
+    border-color: alpha(@accent, 0.2);
+    box-shadow: 0 2px 6px alpha(@accent, 0.1);
+}
+
+/* Entry Fields - Glass Inputs */
+entry {
+    background: alpha(@bg, 0.5);
+    border: 1px solid alpha(@accent, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: inset 0 1px 2px alpha(#000000, 0.05);
+    transition: all 0.2s ease;
+}
+
+entry:focus {
+    border-color: alpha(@accent, 0.3);
+    box-shadow: 
+        inset 0 1px 2px alpha(#000000, 0.1),
+        0 0 0 2px alpha(@accent, 0.1);
+}
+
+/* Device List - Hover Effects */
+treeview.view:hover {
+    background: alpha(@accent, 0.1);
+}
+
+/* Status Text - Subtle Highlight */
+label:disabled {
+    color: alpha(@fg, 0.5);
+    text-shadow: none;
+}
