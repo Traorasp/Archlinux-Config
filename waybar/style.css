@@ -39,7 +39,7 @@ tooltip {
     color: @foreground;
 }
 
-#clock:hover, #network:hover, #power-profiles-daemon:hover, #idle_inhibitor:hover, #battery:hover, #pulseaudio:hover, #backlight:hover, #workspaces:hover, label {
+#clock:hover, #network:hover, #power-profiles-daemon:hover, #idle_inhibitor:hover, #battery:hover, #pulseaudio:hover, #backlight:hover, #workspaces:hover, #custom-alarm:hover, label {
     color: @color3;
 }
 
@@ -48,7 +48,7 @@ tooltip {
     color: @foreground;
 }
 
-#clock, #network, #power-profiles-daemon, #idle_inhibitor, #battery, #pulseaudio, #backlight, #workspaces {
+#clock, #network, #power-profiles-daemon, #idle_inhibitor, #battery, #pulseaudio, #backlight, #custom-alarm, #workspaces {
     color: @foreground;
     padding: 5px 15px;
     margin: 0px 2px; 
@@ -80,5 +80,21 @@ tooltip {
 #workspaces button.active label {
     color: @color3;
     font-weight: 900;
+}
+
+.module.critical {
+    color: @color14;
+    background: linear-gradient(
+        145deg,
+        alpha(@color1, 0.5),
+        alpha(@color5, 0.4)
+    );
+    animation: pulse 1.5s infinite, alternate infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
 }
 

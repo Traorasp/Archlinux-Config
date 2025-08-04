@@ -3,7 +3,7 @@
 ALARM_SCRIPT="$HOME/.config/hypr/scripts/alarm.sh"
 
 json_output() {
-    echo "{\"text\":\"$1\",\"class\":\"$2\"}"
+    echo "{\"text\":\"$1\"}"
 }
 
 case "$1" in
@@ -11,12 +11,12 @@ case "$1" in
         # Get current alarm status (parsed from JSON)
         status=$($ALARM_SCRIPT check | jq -r '.text')
         
-        if [[ "$status" == "No alarm" ]]; then
+        if [[ "$status" == "" ]]; then
             # No alarm set - show creation menu
-            ACTION=$(printf "30min Alarm\n1hr Alarm\nCustom Alarm" | rofi -dmenu -p "Set Alarm")
+            ACTION=$(printf "6min Alarm\n30min Alarm\nCustom Alarm" | rofi -dmenu -p "Set Alarm")
             case "$ACTION" in
+                "6min Alarm") $ALARM_SCRIPT start 6 ;;
                 "30min Alarm") $ALARM_SCRIPT start 30 ;;
-                "1hr Alarm") $ALARM_SCRIPT start 60 ;;
                 "Custom Alarm") 
                     DURATION=$(rofi -dmenu -p "Enter minutes (1-240)")
                     if [[ "$DURATION" =~ ^[0-9]+$ ]] && (( DURATION > 0 && DURATION <= 240 )); then

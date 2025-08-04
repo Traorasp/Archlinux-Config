@@ -10,17 +10,17 @@
 
     // Choose the order of the modules
     "modules-left": [
+        "idle_inhibitor",
+        "power-profiles-daemon",
         "hyprland/workspaces",
     ],
     "modules-center": [
 	"clock"
     ],
     "modules-right": [
-        "idle_inhibitor",
 	"custom/alarm",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "backlight",
         "battery",
     ],
@@ -116,7 +116,7 @@
 	"exec" : "/home/nephesora/.config/hypr/scripts/alarm.sh",	
 	"return-type": "json",
 	"interval" : 1,
-	"format" : "Alarm: {}",
+	"format" : "󰀠 {}",
 	"tooltip" : false,
 	"on-click" : "/home/nephesora/.config/hypr/scripts/waybar-alarm.sh alarm-menu"
     }
